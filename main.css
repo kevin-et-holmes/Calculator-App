@@ -13,7 +13,7 @@
 }
 
 .calculator {
-    background-color: darkslategrey;
+    background-color: #22252d;
     width: 100%;
     max-width: 375px;
     min-height: 640px;
@@ -90,5 +90,13 @@
 
 .keys .key:hover {
     box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key.operator span {
+    color: #EB6666;
+}
+
+.keys .key.action span {
+    color: #26fed7;
 }
 
