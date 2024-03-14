@@ -27,8 +27,11 @@ for (let key of keys) {
             }
             display_input.innerHTML = CleanInput(input);
         } else {
-            input += value;
-            display_input.innerHTML = CleanInput(input);
+            if (ValidateInput(value)) {
+                input += value;
+                display_input.innerHTML = CleanInput(input);
+            }
+            
         }
     })
 }
@@ -75,4 +78,21 @@ function CleanOutput (output) {
     }
 
     return output_array.join("");
+}
+
+function ValidateInput (value) {
+    let last_input = input.slice(-1);
+    let operators = ["+", "-", "*", "/"]
+
+    if (value == "." && last_input == ".") {
+        return false;
+    }
+    if (operators.includes(value)) {
+        if (operators.includes(last_input)) {
+            return false
+        } else {
+            return true
+        }
+    }
+    return true
 }
